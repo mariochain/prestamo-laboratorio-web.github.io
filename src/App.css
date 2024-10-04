@@ -1,38 +1,76 @@
+/* Asegúrate de que el root ocupe todo el ancho y altura */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  /* Eliminar márgenes por defecto */
+  padding: 0;
+  /* Eliminar padding por defecto */
+}
+
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* Cambia a flex para que los elementos se alineen correctamente */
 }
 
-.App-link {
-  color: #61dafb;
+
+.navbar {
+  transition: margin-left 0.3s ease;
+  z-index: 1000;
+  /* Asegúrate de que el navbar esté por encima de otros elementos */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Estilos del sidebar */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  background-color: #023E8A;
+  padding-top: 60px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  /* Esto ayuda a ocultar el contenido cuando se colapsa */
+  white-space: nowrap;
+  /* Previene que el texto haga wrap */
+}
+
+/* Ocultar el sidebar */
+.sidebar-collapsed {
+  width: 0;
+}
+
+/* Para ocultar el contenido textual */
+.sidebar-collapsed .list-unstyled {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+/* Mostrar el contenido textual cuando el sidebar está expandido */
+.sidebar .list-unstyled {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+/* Estilos para el contenido */
+.content {
+  margin-left: 250px;
+  /* Espacio para el sidebar */
+  transition: margin 0.3s ease;
+  /* Transición suave al colapsar */
+
+  /* Ajustar el ancho del contenido */
+}
+
+.content-collapsed {
+  margin-left: 0;
+  /* Sin margen cuando el sidebar está colapsado */
+  /* El contenido ocupa el 100% del ancho */
 }

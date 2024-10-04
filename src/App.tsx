@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { useState } from 'react';
+import AppRoutes from './routes/routes';
+import Navbar from './components/NavBar';
 import './App.css';
+import SideBar from './components/SideBar';
+import { useAuthStore } from './stores/authStore';
 
 function App() {
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const { isAuthenticated } = useAuthStore();
+
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(prev => !prev);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {isAuthenticated &&
+        <>
+          <Navbar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+          <div className={` ${isSidebarVisible ? '' : 'sidebar-collapsed'}`}>
+            <SideBar isVisible={isSidebarVisible} />
+          </div>
+        </>
+      }
+      <div className={`content ${isSidebarVisible ? '' : 'content-collapsed'} col-9`}>
+        <AppRoutes />
+      </div>
+    </Router>
   );
 }
 
