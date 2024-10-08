@@ -42,7 +42,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
         } else if (username === 'student@example.com' && password === '1234') {
             const user: User = {
                 name: 'Estudiante',
-                photo: 'student_photo_url', // Coloca la URL de la imagen del estudiante
+                photo: 'https://scontent.felp1-1.fna.fbcdn.net/v/t39.30808-6/376621230_6500932346620429_6338072394074559642_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iuNq9-5MdXQQ7kNvgF-Zc2A&_nc_ht=scontent.felp1-1.fna&_nc_gid=AkDs8LdOKGPz0Gz4pYPkEaH&oh=00_AYAGxqAgf7ACwjbpOBtem7dTwGYCXVcOFCyVEuntDgd8Kw&oe=670524BC', // Coloca la URL de la imagen del estudiante
                 email: username,
                 career: 'Ingeniería',
                 semester: 4,

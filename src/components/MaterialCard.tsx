@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Material } from '../interface/Material';
+import { Material } from '../interface/MaterialInterface';
 import { useMaterialStore } from '../stores/materialStore';
 
 interface MaterialCardProps {

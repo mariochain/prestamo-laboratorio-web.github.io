@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { Loan } from '../interface/Loan';
+import { Loan } from '../interface/LoanInterface';
 
 interface LoanStore {
     loans: Loan[];

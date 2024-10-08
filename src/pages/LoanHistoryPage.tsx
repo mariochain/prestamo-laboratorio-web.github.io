@@ -1,17 +1,13 @@
-import { useLoanStore } from '../stores/loanStore';
 import LoanHistoryTable from '../components/LoanHistoryTable';
 import { FC } from 'react';
 
 const LoanHistoryPage: FC = () => {
-    const { loans } = useLoanStore();
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-9">
-                    <h2>Mis Préstamos</h2>
-                    <LoanHistoryTable loans={loans} />
-                </div>
+        <div className='d-flex justify-content-center mt-5 vh-100 w-100'>
+            <div className="col-10 text-center">
+                <h2>Mis Préstamos</h2>
+                <LoanHistoryTable />
             </div>
         </div>
     );

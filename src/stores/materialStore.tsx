@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { Material } from '../interface/Material';
+import { Material } from '../interface/MaterialInterface';
 
 interface MaterialStore {
     materials: Material[];

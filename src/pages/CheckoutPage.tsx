@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useMaterialStore } from '../stores/materialStore';
-import { Material } from '../interface/Material';
+import { Material } from '../interface/MaterialInterface';
 import { FaTrash } from 'react-icons/fa'; // Puedes usar cualquier ícono que desees
 
 const CheckoutPage: FC = () => {
